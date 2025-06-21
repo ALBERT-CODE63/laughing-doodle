@@ -1,0 +1,192 @@
+/* Base Styles */
+.about-page {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #f5f5dc; /* beige */
+  color: #0a1f44; /* dark blue */
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  padding: 20px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.about {
+  flex: 1;
+  padding: 20px;
+  animation: slideIn 1s ease-in-out;
+}
+
+.about__header h1 {
+  font-size: 2.5rem;
+  border-bottom: 3px solid gold;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  margin-top: 5rem;
+  text-align: center;
+}
+
+/*. Arrange skills sections side by side */
+.about__skills {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+.skills__technical,
+.skills__soft {
+  flex: 1;
+}
+
+/* Ensure each skills list is vertical */
+.skills__soft ul {
+  display: flex;
+  gap:40px;
+  margin: 0;
+}
+
+.about__hobbies  ul{
+  display: flex;
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+.about__hobbies ul {
+  display: flex;
+  flex:1;
+}
+ 
+
+.about__hobbies li {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.about__intro {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.about__image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  animation: popIn 1.2s ease;
+}
+
+.about__bio {
+  flex: 1;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.about__skills h2,
+.about__hobbies h2 {
+  color: #0a1f44;
+  border-left: 4px solid gold;
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+}
+
+.about__quote blockquote {
+  font-style: italic;
+  color: #333;
+  border-left: 4px solid gold;
+  padding-left: 15px;
+  margin-top: 20px;
+  font-size: 1.1rem;
+  animation: fadeInQuote 1.5s ease;
+}
+
+/* Sequential animation for technical skills */
+.skills__technical li {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInSkill 0.4s ease-in-out forwards;
+}
+.skills__technical li:nth-child(1) { animation-delay: 1s; }
+.skills__technical li:nth-child(2) { animation-delay: 0.3s; }
+.skills__technical li:nth-child(3) { animation-delay: 0.5s; }
+.skills__technical li:nth-child(4) { animation-delay: 0.7s; }
+.skills__technical li:nth-child(5) { animation-delay: 0.9s; }
+.skills__technical li:nth-child(6) { animation-delay: 1.1s; }
+
+@keyframes fadeInSkill {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(30px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeInQuote {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .about__intro {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about__bio {
+    font-size: 1rem;
+  }
+
+  .about__image {
+    width: 150px;
+    height: 150px;
+  }
+
+ 
+
+  .about__skills h2,
+  .about__hobbies h2 {
+    font-size: 1.4rem;
+  }
+
+  li {
+    justify-content: center;
+  }
+
+  .about__hobbies ul {
+    justify-content: center;
+  }
+}

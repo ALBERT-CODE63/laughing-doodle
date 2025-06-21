@@ -1,0 +1,116 @@
+/* blog.css */
+
+.blogs-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background-color: rgb(103, 132, 227);; /* light blue tint */
+  color: #0a1f44; /* rich navy */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 3rem 1.5rem;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.blogs__title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  color: #0a1f44;
+  position: relative;
+}
+
+.blogs__title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: #ffcc00;
+  margin: 12px auto 0 auto;
+  border-radius: 2px;
+}
+
+.blogs__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.blog__card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.blog__card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+
+.blog__title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #0a1f44;
+}
+
+.blog__summary {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333333;
+  margin-bottom: 1.5rem;
+}
+
+.blog__link {
+  align-self: flex-start;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #0077cc;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.blog__link:hover {
+  color: #004c99;
+  border-color: #004c99;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .blogs__title {
+    font-size: 2rem;
+  }
+
+  .blog__title {
+    font-size: 1.3rem;
+  }
+
+  .blog__summary {
+    font-size: 0.95rem;
+  }
+
+  .blog__link {
+    font-size: 0.9rem;
+  }
+}
